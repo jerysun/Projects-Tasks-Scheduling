@@ -54,7 +54,7 @@ provide('projects', projects);
 const userProfile = useUserProfile();
 const activeProjectId = computed(() => userProfile.value?.activeProjectId);
 const tasks = useQueryTasks(activeProjectId);
-
+provide('tasks', tasks);
 provide('activeProjectId', activeProjectId);
 
 const store = useStore();

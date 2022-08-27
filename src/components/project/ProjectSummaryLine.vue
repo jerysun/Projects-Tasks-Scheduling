@@ -22,10 +22,8 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
-import { useStore } from 'vuex';
-const store = useStore();
-const tasks = computed(() => store.getters[`project/activeProjectTasks`]);
+import { computed, inject } from 'vue';
+const tasks = inject('tasks');
 const total = computed(() => tasks.value.length);
 const completion = computed(() =>
   Math.ceil(
