@@ -3,6 +3,7 @@
     <div
       class="w-full md:w-1/3 xl:w-1/5 mr-4 px-0 md:px-4 mb-4 h-full text-lg md:text-sm"
     >
+      <UserProfile />
       <ProjectAdd />
       <ProjectList :projects="projects" />
     </div>
@@ -46,6 +47,7 @@ import { SET_ONLY_PENDING } from './../store/mutation-types';
 import { useQueryProjects, useQueryTasks, addTask, updateTask } from './../firebase/project';
 import { useUserProfile } from './../firebase/user';
 import ProjectAdd from './../components/project/ProjectAdd.vue';
+import UserProfile from '../components/user/UserProfile.vue';
 
 const projects = useQueryProjects();
 provide('projects', projects);
